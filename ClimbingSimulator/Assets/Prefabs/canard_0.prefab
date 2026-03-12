@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3483959080928580055}
   - component: {fileID: 2294231397833413352}
   - component: {fileID: 8097404152539108825}
+  - component: {fileID: 4586259352260966968}
   - component: {fileID: 7519663480084633129}
   m_Layer: 8
   m_Name: canard_0
@@ -120,6 +121,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &4586259352260966968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 507718574663754716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d04f1259828a5047bce55dd9b8900bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObstacleEffect
+  type: 2
+  stunDuration: 2
 --- !u!61 &7519663480084633129
 BoxCollider2D:
   m_ObjectHideFlags: 0

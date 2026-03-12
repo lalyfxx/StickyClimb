@@ -12,11 +12,14 @@ public class StickyLimb : MonoBehaviour
     [Header("Layers")]
     public LayerMask wallLayer;            
 
+    [Header("Hit (Dégâts)")]
+    public float stunTimer = 0f; 
+
     private Vector2 moveInput;
     private bool gripInput;                
-    private FixedJoint2D currentJoint;    
+    private FixedJoint2D currentJoint;     
 
-    public bool IsStuck => currentJoint != null;
+    public bool IsStuck => currentJoint != null; 
 
     void Awake()
     {
@@ -37,6 +40,14 @@ public class StickyLimb : MonoBehaviour
         gripInput = grip;
     }
 
+    void Update()
+    {
+        if (stunTimer > 0)
+        {
+            stunTimer -= Time.deltaTime;
+        }
+    }
+
     void FixedUpdate()
     {
         if (gripInput)
@@ -53,7 +64,7 @@ public class StickyLimb : MonoBehaviour
         }
         else
         {
-            if (!IsStuck)
+            if (!IsStuck && stunTimer <= 0f)
             {
                 TryToStick();
             }
@@ -75,7 +86,6 @@ public class StickyLimb : MonoBehaviour
             }
 
             tipRb.linearVelocity = Vector2.zero;
-            
             Debug.Log($"[{name}] COLLÉ à {hit.name}");
         }
     }
@@ -90,11 +100,24 @@ public class StickyLimb : MonoBehaviour
         }
     }
 
+    public void ForceUnstick(float stunDuration = 1f)
+    {
+        if (currentJoint != null)
+        {
+            Destroy(currentJoint);
+            currentJoint = null;
+        }
+        
+        stunTimer = stunDuration; 
+        
+        Debug.Log($"[{name}]Décroché de force,Stun pour {stunDuration}s");
+    }
+
     void OnDrawGizmosSelected()
     {
         if (tipRb != null)
         {
-            Gizmos.color = IsStuck ? Color.green : Color.red;
+            Gizmos.color = stunTimer > 0 ? Color.yellow : (IsStuck ? Color.green : Color.red);
             Gizmos.DrawWireSphere(tipRb.position, stickRadius);
         }
     }
