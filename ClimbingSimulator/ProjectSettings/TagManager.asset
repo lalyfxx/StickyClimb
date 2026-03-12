@@ -14,7 +14,7 @@ TagManager:
   - stickywall
   - Water
   - UI
-  - NoStick
+  - NonSticky
   - player
   - Obstacle
   - 

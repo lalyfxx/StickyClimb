@@ -11,9 +11,12 @@ public class StickyLimb : MonoBehaviour
 
     [Header("Layers")]
     public LayerMask wallLayer;            
+    public LayerMask nonStickyLayer; 
 
     [Header("Hit (Dégâts)")]
     public float stunTimer = 0f; 
+
+    public static int totalGripsPressed = 0;
 
     private Vector2 moveInput;
     private bool gripInput;                
@@ -34,10 +37,22 @@ public class StickyLimb : MonoBehaviour
         tipRb.bodyType = RigidbodyType2D.Dynamic;
     }
 
+    void OnDestroy()
+    {
+        totalGripsPressed = 0;
+    }
+
     public void SetInput(Vector2 move, bool grip)
     {
         moveInput = move;
-        gripInput = grip;
+        
+        if (grip != gripInput)
+        {
+            if (grip) totalGripsPressed++;
+            else totalGripsPressed--;
+            
+            gripInput = grip;
+        }
     }
 
     void Update()
@@ -52,12 +67,12 @@ public class StickyLimb : MonoBehaviour
     {
         if (gripInput)
         {
-            if (IsStuck)
+            if (IsStuck && totalGripsPressed < 4)
             {
                 Unstick();
             }
 
-            if (moveInput.sqrMagnitude > 0.05f)
+            if (moveInput.sqrMagnitude > 0.05f && totalGripsPressed < 4)
             {
                 tipRb.AddForce(moveInput.normalized * moveForce, ForceMode2D.Force);
             }
@@ -73,8 +88,10 @@ public class StickyLimb : MonoBehaviour
 
     private void TryToStick()
     {
+        Collider2D badHit = Physics2D.OverlapCircle(tipRb.position, stickRadius, nonStickyLayer);
+        if (badHit != null) return; 
+
         Collider2D hit = Physics2D.OverlapCircle(tipRb.position, stickRadius, wallLayer);
-        
         if (hit != null)
         {
             currentJoint = gameObject.AddComponent<FixedJoint2D>();
@@ -86,7 +103,6 @@ public class StickyLimb : MonoBehaviour
             }
 
             tipRb.linearVelocity = Vector2.zero;
-            Debug.Log($"[{name}] COLLÉ à {hit.name}");
         }
     }
 
@@ -96,7 +112,6 @@ public class StickyLimb : MonoBehaviour
         {
             Destroy(currentJoint);
             currentJoint = null;
-            Debug.Log($"[{name}] DÉCOLLÉ");
         }
     }
 
@@ -107,10 +122,7 @@ public class StickyLimb : MonoBehaviour
             Destroy(currentJoint);
             currentJoint = null;
         }
-        
         stunTimer = stunDuration; 
-        
-        Debug.Log($"[{name}]Décroché de force,Stun pour {stunDuration}s");
     }
 
     void OnDrawGizmosSelected()
