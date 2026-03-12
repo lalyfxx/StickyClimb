@@ -20,9 +20,6 @@ public class ScoreManager : MonoBehaviour
             startY = playerTorso.position.y;
             highestY = startY;
         }
-        
-        PlayerPrefs.SetInt("CurrentScore", 0);
-        
         UpdateScoreDisplay();
     }
 
@@ -42,16 +39,16 @@ public class ScoreManager : MonoBehaviour
     {
         if (scoreText != null)
         {
-            float currentScore = Mathf.Max(0, (highestY - startY) * scoreMultiplier);
-            int scoreInt = Mathf.FloorToInt(currentScore);
+            float currentScore = (highestY - startY) * scoreMultiplier;
+            int finalScore = Mathf.FloorToInt(currentScore); 
             
-            scoreText.text = scoreInt.ToString() + " m";
+            scoreText.text = finalScore.ToString() + " m";
 
-            PlayerPrefs.SetInt("CurrentScore", scoreInt);
+            PlayerPrefs.SetInt("LastScore", finalScore);
 
-            if (scoreInt > PlayerPrefs.GetInt("HighScore", 0))
+            if (finalScore > PlayerPrefs.GetInt("HighScore", 0))
             {
-                PlayerPrefs.SetInt("HighScore", scoreInt);
+                PlayerPrefs.SetInt("HighScore", finalScore);
             }
         }
     }
