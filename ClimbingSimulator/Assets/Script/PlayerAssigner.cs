@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerAssigner : MonoBehaviour
 {
-    [Header("Assignations manuelles")]
+    [Header("Assignations")]
     public StickyLimb rightArmLimb;   
     public StickyLimb rightLegLimb;   
 
@@ -32,13 +32,13 @@ public class PlayerAssigner : MonoBehaviour
         {
             controller.armLimb = rightArmLimb;
             controller.legLimb = rightLegLimb;
-            Debug.Log("Manette 1 assignée à la moitié DROITE");
+            Debug.Log("Manette DROITE");
         }
-        else // deuxième manette → moitié gauche
+        else 
         {
             controller.armLimb = leftArmLimb;
             controller.legLimb = leftLegLimb;
-            Debug.Log("Manette 2 assignée à la moitié GAUCHE");
+            Debug.Log("Manette GAUCHE");
         }
     }
 }
