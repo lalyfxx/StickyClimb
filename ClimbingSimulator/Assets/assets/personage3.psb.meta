@@ -51,7 +51,7 @@ ScriptedImporter:
     ignorePngGamma: 0
     cookieMode: 0
     filterMode: 1
-    aniso: 6
+    aniso: 1
     mipBias: 0
     wrapU: 0
     wrapV: 0
