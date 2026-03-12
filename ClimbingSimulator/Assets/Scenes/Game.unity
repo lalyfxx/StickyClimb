@@ -1018,7 +1018,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StickyLimb
   tipRb: {fileID: 423290717}
-  moveForce: 95
+  moveForce: 60
   stickRadius: 0.8
   wallLayer:
     serializedVersion: 2
@@ -1745,7 +1745,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9271c148c2362714886784a5666e962f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SimpleVerticalScroll
-  scrollSpeed: 0.1
+  scrollSpeed: 0.5
 --- !u!114 &959461309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2612,7 +2612,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StickyLimb
   tipRb: {fileID: 1638431677}
-  moveForce: 95
+  moveForce: 60
   stickRadius: 0.8
   wallLayer:
     serializedVersion: 2
@@ -3041,7 +3041,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StickyLimb
   tipRb: {fileID: 1933395868}
-  moveForce: 95
+  moveForce: 60
   stickRadius: 4.56
   wallLayer:
     serializedVersion: 2
@@ -3356,7 +3356,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StickyLimb
   tipRb: {fileID: 2025365532}
-  moveForce: 95
+  moveForce: 60
   stickRadius: 0.8
   wallLayer:
     serializedVersion: 2
