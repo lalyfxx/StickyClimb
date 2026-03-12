@@ -1,0 +1,107 @@
+{
+    "version": 1,
+    "name": "StickyClimb_Controls",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "761c7326-2ca2-453e-a5fb-b5d0ba6a0477",
+            "actions": [
+                {
+                    "name": "Arm_Move",
+                    "type": "PassThrough",
+                    "id": "957e99e5-4b9e-496a-8849-551700c6621a",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Leg_Move",
+                    "type": "PassThrough",
+                    "id": "6d5d8563-31c4-4eb2-a658-d86b76e83e7c",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Arm_Grip",
+                    "type": "PassThrough",
+                    "id": "62390291-a623-4eef-9789-5452e0c87336",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Leg_Grip",
+                    "type": "PassThrough",
+                    "id": "6fcf9d6a-3be9-4c0b-bb0d-e6c27dbfce86",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c9b3daeb-bc08-492b-bd7e-47a35753a061",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "Arm_Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "29ddaf9b-7aa4-40e5-8611-fe5328852aee",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "Leg_Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dad946ae-519a-44a9-9a4a-14f5e5d41f52",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "Arm_Grip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5031be87-1639-4f44-a948-bbd3bde09653",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "Leg_Grip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Gamepad",
+            "bindingGroup": "Gamepad",
+            "devices": [
+                {
+                    "devicePath": "<Gamepad>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
