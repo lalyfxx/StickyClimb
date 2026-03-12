@@ -19,8 +19,8 @@ public class GameOverMenu : MonoBehaviour
         int highScore = PlayerPrefs.GetInt("HighScore", 0);
 
         
-        if (scoreText != null) scoreText.text = "SCORE : " + lastScore + " m";
-        if (highScoreText != null) highScoreText.text = "RECORD : " + highScore + " m";
+        if (scoreText != null) scoreText.text = lastScore + " m";
+        if (highScoreText != null) highScoreText.text = highScore + " m";
     }
 
     public void Rejouer()
