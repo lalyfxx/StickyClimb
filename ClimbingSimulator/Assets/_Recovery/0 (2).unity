@@ -1018,7 +1018,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StickyLimb
   tipRb: {fileID: 423290717}
-  moveForce: 95
+  moveForce: 93.6
   stickRadius: 0.8
   wallLayer:
     serializedVersion: 2
@@ -1829,7 +1829,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 1.5
+  near clip plane: 1
   far clip plane: 1000
   field of view: 60
   orthographic: 1
@@ -2612,7 +2612,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StickyLimb
   tipRb: {fileID: 1638431677}
-  moveForce: 95
+  moveForce: 99.9
   stickRadius: 0.8
   wallLayer:
     serializedVersion: 2
@@ -3041,7 +3041,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StickyLimb
   tipRb: {fileID: 1933395868}
-  moveForce: 95
+  moveForce: 155.3
   stickRadius: 4.56
   wallLayer:
     serializedVersion: 2
@@ -3356,7 +3356,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StickyLimb
   tipRb: {fileID: 2025365532}
-  moveForce: 95
+  moveForce: 65.2
   stickRadius: 0.8
   wallLayer:
     serializedVersion: 2
