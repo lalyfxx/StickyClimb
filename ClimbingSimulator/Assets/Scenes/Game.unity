@@ -268,10 +268,6 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.99998057
       objectReference: {fileID: 0}
-    - target: {fileID: -8664614557867167454, guid: 4975365a3ae4e304a9e0807a7bfed8fa, type: 3}
-      propertyPath: m_BoneTransforms.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: -8653719598885068355, guid: 4975365a3ae4e304a9e0807a7bfed8fa, type: 3}
       propertyPath: m_Name
       value: personage3
@@ -429,9 +425,21 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2093413259457656494, guid: 4975365a3ae4e304a9e0807a7bfed8fa, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 5866830725109648087, guid: 6101402c61a35ce4fbd54af0ea3e31be, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2093413259457656494, guid: 4975365a3ae4e304a9e0807a7bfed8fa, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2093413259457656494, guid: 4975365a3ae4e304a9e0807a7bfed8fa, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2093413259457656494, guid: 4975365a3ae4e304a9e0807a7bfed8fa, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2093413259457656494, guid: 4975365a3ae4e304a9e0807a7bfed8fa, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -480,10 +488,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 8242214219583767752, guid: 4975365a3ae4e304a9e0807a7bfed8fa, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8683593730259676499, guid: 4975365a3ae4e304a9e0807a7bfed8fa, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
@@ -529,9 +533,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -6190081241417897260, guid: 4975365a3ae4e304a9e0807a7bfed8fa, type: 3}
       insertIndex: -1
       addedObject: {fileID: 199828580}
-    - targetCorrespondingSourceObject: {fileID: 8242214219583767752, guid: 4975365a3ae4e304a9e0807a7bfed8fa, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1984318281}
     - targetCorrespondingSourceObject: {fileID: -7194510810855045476, guid: 4975365a3ae4e304a9e0807a7bfed8fa, type: 3}
       insertIndex: -1
       addedObject: {fileID: 432864644}
@@ -1845,7 +1846,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 109.2, y: -30.3}
+  m_AnchoredPosition: {x: 109.19995, y: -30.300049}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &608123814 stripped
@@ -4405,27 +4406,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2074134770}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1984318277 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8242214219583767752, guid: 4975365a3ae4e304a9e0807a7bfed8fa, type: 3}
-  m_PrefabInstance: {fileID: 63533480}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1984318281
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1984318277}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed8b1ae4e4e52b34ea557c1c11e076fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.2D.Animation.Runtime::UnityEngine.U2D.Animation.SpriteResolver
-  m_CategoryHash: 0
-  m_labelHash: 0
-  m_SpriteKey: 0
-  m_SpriteHash: 153830027
 --- !u!1 &2000576834
 GameObject:
   m_ObjectHideFlags: 0
