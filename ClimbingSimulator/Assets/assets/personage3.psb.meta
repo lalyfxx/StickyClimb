@@ -104,7 +104,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 601
+      y: 647
       width: 146
       height: 182
     spriteID: a0edb69f7c33dcc4e83a3912853a7454
@@ -476,7 +476,7 @@ ScriptedImporter:
     - {x: 29, y: 30}
     - {x: 30, y: 31}
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 601}
+    uvTransform: {x: 4, y: 647}
     spritePosition: {x: 879, y: 795}
   - name: LeftLowerArm
     originalName: 
@@ -878,7 +878,7 @@ ScriptedImporter:
     - {x: 30, y: 31}
     tessellationDetail: 0
     uvTransform: {x: 4, y: 431}
-    spritePosition: {x: 477, y: 725}
+    spritePosition: {x: 455, y: 713}
   - name: LeftupperLeg
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -2192,7 +2192,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 516
+      y: 539
       width: 404
       height: 77
     spriteID: 3b746f81e6c0720408ab12b95fcf6872
@@ -2560,8 +2560,8 @@ ScriptedImporter:
     - {x: 27, y: 28}
     - {x: 28, y: 29}
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 516}
-    spritePosition: {x: 1029, y: 725}
+    uvTransform: {x: 4, y: 539}
+    spritePosition: {x: 1029, y: 713}
   spriteImportData: []
   rigSpriteImportData: []
   sharedRigSpriteImportData: []
@@ -2831,7 +2831,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: a0edb69f7c33dcc4e83a3912853a7454
     layerID: 30
-    mosaicPosition: {x: 4, y: 601}
+    mosaicPosition: {x: 4, y: 647}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -2881,7 +2881,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 3b746f81e6c0720408ab12b95fcf6872
     layerID: 13
-    mosaicPosition: {x: 4, y: 516}
+    mosaicPosition: {x: 4, y: 539}
     flatten: 0
     isImported: 1
     isVisible: 1

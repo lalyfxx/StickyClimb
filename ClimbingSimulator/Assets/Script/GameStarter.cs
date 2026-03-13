@@ -64,7 +64,7 @@ public class GameStarter : MonoBehaviour
         texteDecompte.text = "1";
         yield return new WaitForSecondsRealtime(1f);
         
-        texteDecompte.text = "GO !";
+        texteDecompte.text = "Stick !";
         
         Time.timeScale = 1f;
         jeuDemarre = true;

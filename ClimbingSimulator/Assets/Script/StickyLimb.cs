@@ -16,8 +16,8 @@ public class StickyLimb : MonoBehaviour
     [Header("Hit (Dégâts)")]
     public float stunTimer = 0f; 
 
-    [Header("Audio (Sons)")]
-    public AudioClip ventouseSound;
+    [Header("Audio (Sons)")] 
+    public AudioClip ventouseSound; 
     private AudioSource audioSource;
 
     public static int totalGripsPressed = 0;
@@ -50,6 +50,7 @@ public class StickyLimb : MonoBehaviour
     public void SetInput(Vector2 move, bool grip)
     {
         moveInput = move;
+
         if (grip != gripInput)
         {
             if (grip) totalGripsPressed++;
@@ -65,17 +66,26 @@ public class StickyLimb : MonoBehaviour
 
     void FixedUpdate()
     {
+
         if (gripInput)
         {
-            if (IsStuck && totalGripsPressed < 4) Unstick();
-            if (moveInput.sqrMagnitude > 0.05f && totalGripsPressed < 4)
+            if (!IsStuck && stunTimer <= 0f) 
             {
-                tipRb.AddForce(moveInput.normalized * moveForce, ForceMode2D.Force);
+                TryToStick();
             }
         }
         else
         {
-            if (!IsStuck && stunTimer <= 0f) TryToStick();
+            if (IsStuck) 
+            {
+                Unstick();
+            }
+
+
+            if (moveInput.sqrMagnitude > 0.05f && totalGripsPressed > 0)
+            {
+                tipRb.AddForce(moveInput.normalized * moveForce, ForceMode2D.Force);
+            }
         }
     }
 
