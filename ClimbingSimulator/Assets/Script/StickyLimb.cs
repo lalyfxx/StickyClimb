@@ -16,6 +16,10 @@ public class StickyLimb : MonoBehaviour
     [Header("Hit (Dégâts)")]
     public float stunTimer = 0f; 
 
+    [Header("Audio (Sons)")]
+    public AudioClip ventouseSound;
+    private AudioSource audioSource;
+
     public static int totalGripsPressed = 0;
 
     private Vector2 moveInput;
@@ -27,12 +31,13 @@ public class StickyLimb : MonoBehaviour
     void Awake()
     {
         if (tipRb == null) tipRb = GetComponent<Rigidbody2D>();
-        if (tipRb == null)
+        
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
         {
-            Debug.LogError($"[{name}] ERREUR : Pas de Rigidbody2D !");
-            enabled = false;
-            return;
+            audioSource = gameObject.AddComponent<AudioSource>();
         }
+        audioSource.playOnAwake = false;
 
         tipRb.bodyType = RigidbodyType2D.Dynamic;
     }
@@ -45,33 +50,24 @@ public class StickyLimb : MonoBehaviour
     public void SetInput(Vector2 move, bool grip)
     {
         moveInput = move;
-        
         if (grip != gripInput)
         {
             if (grip) totalGripsPressed++;
             else totalGripsPressed--;
-            
             gripInput = grip;
         }
     }
 
     void Update()
     {
-        if (stunTimer > 0)
-        {
-            stunTimer -= Time.deltaTime;
-        }
+        if (stunTimer > 0) stunTimer -= Time.deltaTime;
     }
 
     void FixedUpdate()
     {
         if (gripInput)
         {
-            if (IsStuck && totalGripsPressed < 4)
-            {
-                Unstick();
-            }
-
+            if (IsStuck && totalGripsPressed < 4) Unstick();
             if (moveInput.sqrMagnitude > 0.05f && totalGripsPressed < 4)
             {
                 tipRb.AddForce(moveInput.normalized * moveForce, ForceMode2D.Force);
@@ -79,10 +75,7 @@ public class StickyLimb : MonoBehaviour
         }
         else
         {
-            if (!IsStuck && stunTimer <= 0f)
-            {
-                TryToStick();
-            }
+            if (!IsStuck && stunTimer <= 0f) TryToStick();
         }
     }
 
@@ -95,14 +88,15 @@ public class StickyLimb : MonoBehaviour
         if (hit != null)
         {
             currentJoint = gameObject.AddComponent<FixedJoint2D>();
-            
             Rigidbody2D wallRb = hit.GetComponent<Rigidbody2D>();
-            if (wallRb != null)
-            {
-                currentJoint.connectedBody = wallRb;
-            }
-
+            if (wallRb != null) currentJoint.connectedBody = wallRb;
             tipRb.linearVelocity = Vector2.zero;
+
+            if (ventouseSound != null && audioSource != null)
+            {
+                audioSource.pitch = Random.Range(0.9f, 1.1f);
+                audioSource.PlayOneShot(ventouseSound, 0.8f);
+            }
         }
     }
 
