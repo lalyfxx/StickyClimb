@@ -9161,7 +9161,7 @@ MonoBehaviour:
   normalMinTime: 1.5
   normalMaxTime: 3
   pianoPrefab: {fileID: 1886672384886058357, guid: 97fda1849c998324c92b7ad2d3816a41, type: 3}
-  pianoSpawnChance: 15
+  pianoSpawnChance: 100
   warningSignPrefab: {fileID: 7483121742205652459, guid: 5a677db3527bbde429781f0af74022e7, type: 3}
   warningDuration: 2
   spawnWidth: 7.3
