@@ -3,14 +3,14 @@ using UnityEngine;
 public class StickyLimb : MonoBehaviour
 {
     [Header("Références")]
-    public Rigidbody2D tipRb;              
+    public Rigidbody2D tipRb;
 
     [Header("Contrôles")]
-    public float moveForce = 200f;         
-    public float stickRadius = 0.8f;       
+    public float moveForce = 200f;
+    public float stickRadius = 0.8f;
 
     [Header("Layers")]
-    public LayerMask wallLayer;            
+    public LayerMask wallLayer;
     public LayerMask nonStickyLayer; 
 
     [Header("Hit (Dégâts)")]
@@ -23,15 +23,15 @@ public class StickyLimb : MonoBehaviour
     public static int totalGripsPressed = 0;
 
     private Vector2 moveInput;
-    private bool gripInput;                
-    private FixedJoint2D currentJoint;     
+    private bool gripInput;
+    private FixedJoint2D currentJoint;
 
     public bool IsStuck => currentJoint != null; 
 
     void Awake()
     {
         if (tipRb == null) tipRb = GetComponent<Rigidbody2D>();
-        
+
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
         {
