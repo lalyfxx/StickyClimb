@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e6fedc2472449cead18ef23b5cb30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.2D.Animation.Runtime::UnityEngine.U2D.Animation.SpriteLibrarySourceAsset
+  m_Library:
+  - m_Name: alternateCostume
+    m_Hash: 875252339
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: Head
+      m_Hash: 130111906
+      m_Sprite: {fileID: 7218255138592538583, guid: 6101402c61a35ce4fbd54af0ea3e31be, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 7218255138592538583, guid: 6101402c61a35ce4fbd54af0ea3e31be, type: 3}
+    - m_Name: LeftArm
+      m_Hash: 730008282
+      m_Sprite: {fileID: -4858306699748664328, guid: 6101402c61a35ce4fbd54af0ea3e31be, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -4858306699748664328, guid: 6101402c61a35ce4fbd54af0ea3e31be, type: 3}
+    - m_Name: RightArm
+      m_Hash: 733214503
+      m_Sprite: {fileID: 2626005985860074230, guid: 6101402c61a35ce4fbd54af0ea3e31be, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 2626005985860074230, guid: 6101402c61a35ce4fbd54af0ea3e31be, type: 3}
+    - m_Name: LeftLeg
+      m_Hash: 101577729
+      m_Sprite: {fileID: 5866830725109648087, guid: 6101402c61a35ce4fbd54af0ea3e31be, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 5866830725109648087, guid: 6101402c61a35ce4fbd54af0ea3e31be, type: 3}
+    - m_Name: RightLeg
+      m_Hash: 104663548
+      m_Sprite: {fileID: 5547610031721549734, guid: 6101402c61a35ce4fbd54af0ea3e31be, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 5547610031721549734, guid: 6101402c61a35ce4fbd54af0ea3e31be, type: 3}
+    - m_Name: Torso
+      m_Hash: 647926657
+      m_Sprite: {fileID: -9037831730406549921, guid: 6101402c61a35ce4fbd54af0ea3e31be, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -9037831730406549921, guid: 6101402c61a35ce4fbd54af0ea3e31be, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 6
+  m_PrimaryLibraryGUID: 
+  m_ModificationHash: 639089987582830254
+  m_Version: 1

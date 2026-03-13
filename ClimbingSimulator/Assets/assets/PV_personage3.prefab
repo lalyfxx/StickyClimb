@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8653719598885068355, guid: 4975365a3ae4e304a9e0807a7bfed8fa, type: 3}
       propertyPath: m_Name
-      value: personage3
+      value: PV_personage3
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 4975365a3ae4e304a9e0807a7bfed8fa, type: 3}
       propertyPath: m_LocalPosition.x
