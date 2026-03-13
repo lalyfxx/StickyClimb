@@ -3,14 +3,17 @@ using UnityEngine;
 public class StickyLimb : MonoBehaviour
 {
     [Header("Références")]
-    public Rigidbody2D tipRb;
+    public Rigidbody2D tipRb;              
+    public SpriteRenderer spriteRenderer;  
 
+    [Header("Visuel")]
+    [Range(0f, 1f)] public float detachedOpacity = 0.75f;
     [Header("Contrôles")]
-    public float moveForce = 200f;
-    public float stickRadius = 0.8f;
+    public float moveForce = 200f;         
+    public float stickRadius = 0.8f;       
 
     [Header("Layers")]
-    public LayerMask wallLayer;
+    public LayerMask wallLayer;            
     public LayerMask nonStickyLayer; 
 
     [Header("Hit (Dégâts)")]
@@ -23,15 +26,17 @@ public class StickyLimb : MonoBehaviour
     public static int totalGripsPressed = 0;
 
     private Vector2 moveInput;
-    private bool gripInput;
-    private FixedJoint2D currentJoint;
+    private bool gripInput;                
+    private FixedJoint2D currentJoint;     
 
     public bool IsStuck => currentJoint != null; 
 
     void Awake()
     {
         if (tipRb == null) tipRb = GetComponent<Rigidbody2D>();
-
+        
+        if (spriteRenderer == null) spriteRenderer = GetComponent<SpriteRenderer>();
+        
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
         {
@@ -42,6 +47,11 @@ public class StickyLimb : MonoBehaviour
         tipRb.bodyType = RigidbodyType2D.Dynamic;
     }
 
+    void Start()
+    {
+        UpdateOpacity();
+    }
+
     void OnDestroy()
     {
         totalGripsPressed = 0;
@@ -50,7 +60,7 @@ public class StickyLimb : MonoBehaviour
     public void SetInput(Vector2 move, bool grip)
     {
         moveInput = move;
-
+        
         if (grip != gripInput)
         {
             if (grip) totalGripsPressed++;
@@ -66,7 +76,6 @@ public class StickyLimb : MonoBehaviour
 
     void FixedUpdate()
     {
-
         if (gripInput)
         {
             if (!IsStuck && stunTimer <= 0f) 
@@ -80,7 +89,6 @@ public class StickyLimb : MonoBehaviour
             {
                 Unstick();
             }
-
 
             if (moveInput.sqrMagnitude > 0.05f && totalGripsPressed > 0)
             {
@@ -102,6 +110,8 @@ public class StickyLimb : MonoBehaviour
             if (wallRb != null) currentJoint.connectedBody = wallRb;
             tipRb.linearVelocity = Vector2.zero;
 
+            UpdateOpacity();
+
             if (ventouseSound != null && audioSource != null)
             {
                 audioSource.pitch = Random.Range(0.9f, 1.1f);
@@ -116,6 +126,7 @@ public class StickyLimb : MonoBehaviour
         {
             Destroy(currentJoint);
             currentJoint = null;
+            UpdateOpacity();
         }
     }
 
@@ -125,8 +136,19 @@ public class StickyLimb : MonoBehaviour
         {
             Destroy(currentJoint);
             currentJoint = null;
+            UpdateOpacity();
         }
         stunTimer = stunDuration; 
+    }
+
+    private void UpdateOpacity()
+    {
+        if (spriteRenderer != null)
+        {
+            Color c = spriteRenderer.color;
+            c.a = IsStuck ? 1f : detachedOpacity;
+            spriteRenderer.color = c;
+        }
     }
 
     void OnDrawGizmosSelected()
@@ -138,3 +160,4 @@ public class StickyLimb : MonoBehaviour
         }
     }
 }
+
